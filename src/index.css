@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+
+  /* BACKGROUNDS */
+
+  --color-bg-primary: #F7F4EF;
+  --color-bg-secondary: #EDE8DE;
+  --color-bg-dark: #2C2E29;
+
+  /* TEXT */
+
+  --color-text-primary: #2C2E29;
+  --color-text-secondary: #4A4D45;
+  --color-text-muted: #A89B8C;
+
+  /* ACCENTS */
+
+  --color-accent-green: #8B9E84;
+  --color-accent-taupe: #C4B9A8;
+  --color-accent-sand: #D4CBBA;
+}
+
+/* BODY */
+
+body {
+
+  font-family: 'DM Sans', sans-serif;
+
+  background: var(--color-bg-primary);
+
+  color: var(--color-text-primary);
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* HEADINGS */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+  font-family: 'Playfair Display', serif;
+}
+
+/* SMOOTH SCROLL */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* TEXT SELECTION */
+
+::selection {
+
+  background: var(--color-accent-green);
+  color: white;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+
+  background: var(--color-accent-sand);
+
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-green);
+}
+
+/* FLOATING ANIMATION */
+
+@keyframes floatSlow {
+
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+
+  50% {
+    transform: translateY(-35px) translateX(22px);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+@keyframes floatSlowReverse {
+
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+
+  50% {
+    transform: translateY(35px) translateX(-22px);
+  }
+
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+/* ANIMATION CLASSES */
+
+.animate-float-slow {
+  animation: floatSlow 14s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatSlowReverse 18s ease-in-out infinite;
+}
+
+/* GLOBAL TRANSITION FEEL */
+
+button,
+a,
+img {
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
